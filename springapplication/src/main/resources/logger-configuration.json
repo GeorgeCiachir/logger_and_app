@@ -1,0 +1,17 @@
+{
+  "root": {
+    "level": "DEBUG",
+    "dateTimePattern": "dd-MM-yyyy HH:mm"
+  },
+  "appenderConfigs": {
+    "console": {
+      "level": "INFO"
+    },
+    "email": {
+      "level": "ERROR"
+    },
+    "HttpAppender": {
+      "level": "DEBUG"
+    }
+  }
+}
