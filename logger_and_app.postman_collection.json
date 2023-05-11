@@ -1,0 +1,91 @@
+{
+	"info": {
+		"_postman_id": "ad018600-b686-4f5e-957a-422528dfdde6",
+		"name": "logger_and_app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13391407"
+	},
+	"item": [
+		{
+			"name": "log on a specific level",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "Log something"
+				},
+				"url": {
+					"raw": "localhost:8080/logger/log?level=debug",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"logger",
+						"log"
+					],
+					"query": [
+						{
+							"key": "level",
+							"value": "debug"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "log on all levels",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "Log something"
+				},
+				"url": {
+					"raw": "localhost:8080/logger/log/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"logger",
+						"log",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reconfigure the loggers",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"root\": {\r\n    \"level\": \"DEBUG\",\r\n    \"dateTimePattern\": \"dd-MM-yyyy HH:mm\"\r\n  },\r\n  \"appenderConfigs\": {\r\n    \"console\": {\r\n      \"level\": \"INFO\"\r\n    },\r\n    \"email\": {\r\n      \"level\": \"ERROR\"\r\n    }\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/logger/reconfigure",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"logger",
+						"reconfigure"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
